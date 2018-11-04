@@ -67,9 +67,9 @@ public class VexCodingStudioExtractor {
             obj = new JSONObject(reader.nextLine());
             reader.close();
 
-            //create an info file about the project (decription and language)
-            PrintWriter infoFile = new PrintWriter(new FileWriter(obj.getString("title") + ".txt"));
-            System.out.printf("Creating new info file \"%s\".\n", obj.getString("title") + ".txt");
+            //create an info file about the project (description and language)
+            PrintWriter infoFile = new PrintWriter(new FileWriter(folderName + "/" + obj.getString("title") + ".txt"));
+            System.out.printf("Creating new info file \"%s\".\n", folderName + "/" + obj.getString("title") + ".txt");
 
             infoFile.printf("Description: %s\n", obj.getString("description"));
             infoFile.printf("Language: %s\n", obj.getJSONObject("language").getString("name"));
